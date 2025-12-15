@@ -1,0 +1,121 @@
+/* ---------- GLOBAL STYLING ---------- */
+.skill-unique-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f8f9fc, #eef1f7);
+}
+
+/* ---------- HEADERS ---------- */
+.skill-unique-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.skill-unique-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1a237e; /* Deep elegant blue */
+  margin-bottom: 10px;
+}
+
+.skill-unique-header p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---------- GRID ---------- */
+.skill-unique-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- TECHNICAL SKILLS ---------- */
+.skill-unique-card {
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  padding: 20px;
+}
+
+.skill-unique-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skill-unique-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  color: #0d47a1; /* Modern dark blue */
+}
+
+.skill-unique-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- SOFT SKILLS ---------- */
+.skill-unique-soft-card {
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e3f2fd, #fff);
+  padding: 25px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.skill-unique-soft-card:hover {
+  background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+  transform: translateY(-6px);
+}
+
+/* ---------- RESPONSIVENESS ---------- */
+@media (max-width: 1024px) {
+  .skill-unique-header h1 {
+    font-size: 2.5rem;
+  }
+  .skill-unique-header p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-unique-page {
+    padding: 40px 15px;
+  }
+  .skill-unique-header h1 {
+    font-size: 2.2rem;
+  }
+  .skill-unique-header p {
+    font-size: 1rem;
+  }
+  .skill-unique-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-unique-header h1 {
+    font-size: 2rem;
+  }
+  .skill-unique-header p {
+    font-size: 0.95rem;
+  }
+  .skill-unique-card,
+  .skill-unique-soft-card {
+    padding: 15px;
+  }
+}

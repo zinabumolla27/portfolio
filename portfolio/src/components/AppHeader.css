@@ -1,0 +1,442 @@
+/* AppHeader.css - Premium Color Scheme */
+
+.app-header {
+  width: 100%;
+  background: linear-gradient(135deg, #1272c6 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-header.scrolled {
+  background: linear-gradient(135deg, #1272c6 1000%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  transition: height 0.3s ease;
+}
+
+.app-header.scrolled .container {
+  height: 70px;
+}
+
+/* Premium Logo Styles */
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.logo-glow {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff);
+  border-radius: 50%;
+  animation: logoPulse 3s ease-in-out infinite;
+  filter: blur(0.5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.logo-glow-small {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff);
+  border-radius: 50%;
+  animation: logoPulse 3s ease-in-out infinite;
+  filter: blur(0.5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  margin-right: 8px;
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: none;
+  background: transparent !important;
+  border: none !important;
+  flex: 1;
+  justify-content: center;
+}
+
+.desktop-menu .ant-menu-item {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 8px !important;
+  padding: 12px 24px !important;
+  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.desktop-menu .ant-menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.desktop-menu .ant-menu-item:hover::before {
+  left: 100%;
+}
+
+.menu-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.desktop-menu .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.desktop-menu .ant-menu-item:hover .menu-label {
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.desktop-menu .ant-menu-item-selected {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  ) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.desktop-menu .ant-menu-item-selected .menu-label {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: block;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-inner {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger:hover .hamburger-inner {
+  color: #ffffff;
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.8) 0%,
+    rgba(118, 75, 162, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 998;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.95) 0%,
+    rgba(118, 75, 162, 0.95) 25%,
+    rgba(240, 147, 251, 0.95) 50%,
+    rgba(245, 87, 108, 0.95) 75%,
+    rgba(79, 172, 254, 0.95) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  backdrop-filter: blur(40px);
+  box-shadow: -5px 0 50px rgba(0, 0, 0, 0.2),
+    inset 1px 0 0 rgba(255, 255, 255, 0.1);
+  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 24px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+.close-icon {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.close-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.mobile-menu-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.mobile-menu .ant-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.mobile-menu .ant-menu-item {
+  background: transparent !important;
+  border: none !important;
+  margin: 12px 0 !important;
+  padding: 20px 24px !important;
+  border-radius: 16px !important;
+  transition: all 0.4s ease !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.mobile-menu .ant-menu-item-selected {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  ) !important;
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.mobile-menu .menu-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex !important;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .logo-badge {
+    display: none;
+  }
+
+  .app-header.scrolled .container {
+    height: 60px;
+  }
+}
+
+/* Animation for mobile menu items */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu .ant-menu-item {
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+.mobile-menu .ant-menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-menu .ant-menu-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mobile-menu .ant-menu-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.mobile-menu .ant-menu-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.mobile-menu .ant-menu-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
